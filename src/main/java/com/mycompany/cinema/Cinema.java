@@ -4,8 +4,6 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Cinema {
-
-    int numero;
     
     public static void main(String[] args) {
         
