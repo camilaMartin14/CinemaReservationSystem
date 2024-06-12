@@ -7,7 +7,44 @@ public class Cinema {
     
     public static void main(String[] args) {
         
-        final char FREE = 'F';
+        char seats[][] = new char[10][10];
+        boolean occupied = false;
+        Scanner sc = new Scanner(System.in);
+        int row, seat = 0;
+        String answer;
+        
+        for (int r = 0; r < 10; r++) {
+            for (int c = 0; c < 10; c++) {
+                seats[r][c] = 'F';
+            }
+            
+        }
+        
+        System.out.println("--------- WELCOME TO THE RESERVATION SYSTEM ---------");
+        
+        while(occupied!=true){
+            System.out.println("Enter row and seat to reserve: \n");
+            System.out.println("Row (0 to 9): \n");
+            row = sc.nextInt();
+            
+            if (seats[row][seat]==('F')) {
+                seats[row][seat]= 'X';
+                System.out.println("The seat was reserved correctly");
+                
+                
+            }else{
+                System.out.println("The seat is occupied, please choose another");
+            
+            
+            }
+            
+            System.out.println("You want to finalize the reservation? (Y= Yes, Another= No) ");
+            answer = sc.next();
+            
+            if (answer.equalsIgnoreCase("S")) {
+                occupied= true;
+        }
+        /*final char FREE = 'F';
         
         char [][] seats = new char[10][10];
         fillSeats (seats, FREE);
@@ -83,5 +120,8 @@ public class Cinema {
     
     public static boolean withinLimitOfArray(int rowLength, int columnLength, int x, int y) {
         return x>= 0 && x< rowLength && y>=0 && y <columnLength;
+    }
+    */
+        }
     }
 }
