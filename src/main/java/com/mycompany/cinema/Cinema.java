@@ -9,7 +9,7 @@ public class Cinema {
         char seats[][] = new char[10][10];
         boolean occupied = false;
         Scanner sc = new Scanner(System.in);
-        int row, seat = 0;
+        int row = 0, seat = 0;
         String answer;
         String seeSeats;
         
@@ -30,19 +30,33 @@ public class Cinema {
                 showSeats(seats);
             }
             
-            
-            System.out.println("Enter row and seat to reserve: \n");
-            System.out.println("Row (0 to 9): \n");
-            row = sc.nextInt();
+            boolean seatOk = false;
+            while(seatOk !=true){
+                System.out.println("Enter row and seat to reserve: \n");
+                System.out.println("Row (0 to 9): \n");
+                row = sc.nextInt();
+                
+                System.out.println("Seat (0 to 9): \n");
+                seat = sc.nextInt();
+                
+                if (row<= 9 && row>= 0) {
+                    if (seat<=9 && seat >= 0) {
+                    seatOk =true;
+                    }else{
+                        System.out.println("The seat number is not valid.");
+                    }
+                }else{
+                    System.out.println("The row number is not valid.");
+                }
+            }
+
             
             if (seats[row][seat]==('F')) {
                 seats[row][seat]= 'X';
                 System.out.println("The seat was reserved correctly");
                 
-                
             }else{
                 System.out.println("The seat is occupied, please choose another");
-            
             
             }
             
