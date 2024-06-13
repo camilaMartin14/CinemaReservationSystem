@@ -65,6 +65,7 @@ public class Cinema {
             
             if (answer.equalsIgnoreCase("Y")) {
                 occupied= true;
+                System.out.println("Enjoy the show! :)");
             }
         }
     }
