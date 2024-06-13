@@ -23,6 +23,10 @@ public class Cinema {
         System.out.println("--------- WELCOME TO THE RESERVATION SYSTEM ---------");
         
         while(occupied!=true){
+            System.out.println("Do you want to see the free seats?");
+            
+            //llamo al metodo
+            
             System.out.println("Enter row and seat to reserve: \n");
             System.out.println("Row (0 to 9): \n");
             row = sc.nextInt();
@@ -43,7 +47,23 @@ public class Cinema {
             
             if (answer.equalsIgnoreCase("S")) {
                 occupied= true;
+            }
         }
+    }
+        
+    static void showSeats(char seats[][]) {
+        for(int r = 0; r < seats.length; r++) {
+            System.out.print(r + " ");
+            
+            for(int c = 0; c < seats[0].length; c++) {
+                
+                System.out.print("[" + seats[r][c] + "]");
+            }
+            System.out.println("");
+        }
+    }
+}
+
         /*final char FREE = 'F';
         
         char [][] seats = new char[10][10];
@@ -101,11 +121,7 @@ public class Cinema {
         }
     }
     
-    public static void showSeats(char[][] seats) {
-            for (int i = 0; i < seats.length; i++) {
-                for (int j = 0; j < seats[0].length; j++) {
-                    System.out.print(seats[i][j] + " ");
-                }
+    
                 System.out.println("");
             }
     }
@@ -122,6 +138,5 @@ public class Cinema {
         return x>= 0 && x< rowLength && y>=0 && y <columnLength;
     }
     */
-        }
-    }
-}
+        
+    
